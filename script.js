@@ -15,7 +15,7 @@ form.addEventListener("submit", (event) => {
     event.preventDefault();
 
     // Здесь твой код
-    fetch(`http://46.21.248.81:3001/user`, {
+    fetch(`https://polinashneider.space/user`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -42,7 +42,10 @@ form.addEventListener("submit", (event) => {
             form.reset();
         })
         .catch((error) => {
-            alert('Oops! Что-то пошло не так!');
+            let div = document.createElement('div');
+            div.className = "alert";
+            div.innerHTML = `${userName.value}, кажется, что-то пошло не так!`;
+            document.body.append(div);
         })
 
 });
